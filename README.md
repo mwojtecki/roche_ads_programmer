@@ -93,15 +93,35 @@ repository secret and is not available outside this repo's CI runs.
    export OPENAI_API_KEY=sk-...          # macOS / Linux
    $env:OPENAI_API_KEY = "sk-..."        # Windows PowerShell
    ```
-3. Install dependencies and run:
+3. Install dependencies:
    ```bash
    cd roche_agent
    pip install -r requirements.txt
+   ```
+4. Start the interactive REPL:
+   ```bash
    python main.py adae.csv
    ```
+   Type a question at the `Question>` prompt, or use `schema` to print the
+   dataset schema and `quit` / `exit` to leave.
 
 > ⚠️ Never commit your API key — anyone with the key can spend against your
 > account.
+
+### Running the example script (`test.py`)
+
+[test.py](roche_agent/test.py) runs a fixed set of example questions
+against [adae.csv](roche_agent/adae.csv) non-interactively — useful as a
+quick smoke-test that your API key and dependencies are working. From the
+`roche_agent/` directory:
+
+```bash
+python test.py
+```
+
+The script prints, for each example question, the number of unique
+subjects matched and their `USUBJID`s. Edit the `QUESTIONS` list at the
+bottom of the file to try your own prompts.
 
 ---
 
