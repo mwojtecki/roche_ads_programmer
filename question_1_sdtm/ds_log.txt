@@ -1,0 +1,26 @@
+
+Attaching package: ‘dplyr’
+
+The following objects are masked from ‘package:stats’:
+
+    filter, lag
+
+The following objects are masked from ‘package:base’:
+
+    intersect, setdiff, setequal, union
+
+ℹ These terms could not be mapped per the controlled terminology: "Randomized", "Completed", "Study Terminated by Sponsor", "Screen Failure", and "Lost to Follow-Up".
+                    [,1]          [,2]          [,3]          [,4]         
+codelist_code       character,168 character,170 character,172 character,174
+term_code           character,168 character,170 character,172 character,174
+term_value          character,168 character,170 character,172 character,174
+collected_value     character,168 character,170 character,172 character,174
+term_preferred_term character,168 character,170 character,172 character,174
+term_synonyms       character,168 character,170 character,172 character,174
+                    [,5]          [,6]         
+codelist_code       character,176 character,178
+term_code           character,176 character,178
+term_value          character,176 character,178
+collected_value     character,176 character,178
+term_preferred_term character,176 character,178
+term_synonyms       character,176 character,178
