@@ -1,11 +1,8 @@
 """
 Example of ClinicalTrialDataAgent using pharamaverseadam::adae dataset.
-Requires OPENAI_API_KEY to be set (via .env or environment variable).
+Requires the OPENAI_API_KEY environment variable to be set
+(provided via the GitHub repository secret in CI).
 """
-from dotenv import load_dotenv
-
-load_dotenv()
-
 # Define the function to run the model and print number of unique subjects
 # and their USUBJIDs
 def run_usubjid_query(question: str, dataset: str) -> None:

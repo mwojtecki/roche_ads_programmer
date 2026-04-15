@@ -5,8 +5,8 @@ CLI REPL for ClinicalTrialDataAgent.
 Usage:
     python main.py path/to/ae_dataset.csv
 
-Set your OpenAI API key in a .env file:
-    OPENAI_API_KEY=sk-...
+Set the OPENAI_API_KEY environment variable before running.
+In CI it is provided via the GitHub repository secret OPENAI_API_KEY.
 
 Special commands:
     schema  — print the dataset schema used by the agent
@@ -15,12 +15,9 @@ Special commands:
 import os
 import sys
 
-from dotenv import load_dotenv
 from tabulate import tabulate
 
 from agent import ClinicalTrialDataAgent
-# Read the .env file so OpenAI client can find the API key
-load_dotenv()
 
 BANNER = """\
 =============================================
@@ -45,7 +42,7 @@ def main() -> None:
     if not os.getenv("OPENAI_API_KEY"):
         print(
             "Warning: OPENAI_API_KEY is not set. "
-            "Add it to a .env file or export it in your shell."
+            "Export it in your shell or provide it via the GitHub Actions secret."
         )
 
     print(f"Loading dataset: {csv_path}")
